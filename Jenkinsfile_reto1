@@ -51,7 +51,7 @@ pipeline {
         stage('Promote') {
             steps {
                 sh 'git switch master'
-                sh 'git merge develop'
+                sh 'git merge -X ours develop'
                 sh 'git push -u origin master'
             }
         }
